@@ -28,8 +28,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OUTPUTS_DIR = "app/outputs"
-
+OUTPUTS_DIR = "app/outputs"# Create directories if they don't exist
+os.makedirs("app/data", exist_ok=True)
+os.makedirs("app/outputs", exist_ok=True)#hi
 # ─────────────────────────────────────────────────────────────────────────────
 # HELPER: Generate Excel valuation model
 # ─────────────────────────────────────────────────────────────────────────────
