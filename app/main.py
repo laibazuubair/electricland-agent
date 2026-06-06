@@ -1,6 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 import os
 import openpyxl
@@ -13,6 +16,10 @@ from app.database import get_all_deals, get_deal_by_id, save_deal, update_deal, 
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Ensure directories exist on startup
+os.makedirs("app/data", exist_ok=True)
+os.makedirs("app/outputs", exist_ok=True)
 
 app = FastAPI(
     title="Electric Land Valuation Agent API",
