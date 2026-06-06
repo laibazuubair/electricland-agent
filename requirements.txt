@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+anthropic
+openpyxl
+python-dotenv
+pydantic
+python-multipart
+msal
+requests
